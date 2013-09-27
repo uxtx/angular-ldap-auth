@@ -1,0 +1,11 @@
+html
+  body
+    h1 Hello
+    p This view is visible to logged in users.
+    table.table.table-striped(data-ng-hide='loading')
+      thead
+        tr
+          th Customer
+      tbody
+        tr(data-ng-repeat='customer in customers')
+          td  {{ customer.name }}

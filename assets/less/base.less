@@ -1,0 +1,366 @@
+/*
+ * 1.) LESS Variables and Imports
+ * 2.) Bootstrap overrides
+ * 3.) CSS Spacers
+ * 4.) Phalanx-specific widgets
+ * 5.) Media Resizing
+ * 6.) External Libraries
+*/
+
+
+
+// 1.) LESS Variables and Imports
+@import 'bootstrap';
+@import 'responsive';
+
+@bodyBackground: #FFFFFF;
+@navbarBrandColor: #989CAE;
+@navbarHeight: 75px;
+@linkColor: #2e5290;
+
+@blue: @linkColor;
+@white: #fff;
+@baseFontSize: 13px;
+@headingsFontWeight: normal;
+
+@navbarBackground: @blue;
+@navbarBackgroundHighlight: lighten(@blue, 10%);
+@navbarText: @white; 
+@navbarLinkColor: @white;
+@navbarLinkColorHover: lighten(@blue, 90%);
+@navbarLinkColorActive: lighten(@blue, 90%);
+@navbarLinkBrandColor: @white;
+@grayLightest: lighten(@grayLighter, 10%);
+@wellLighter: lighten(@wellBackground, 5%);
+
+
+// 2.) Boostrap overrides
+.brand {
+  font-family: @monoFontFamily;
+}
+
+.brand {
+  background-image: url(/images/mb-sprite.png);
+  background-position: 10px -1650px;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 0, 0);
+  cursor: auto;
+  display: block;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 0px;
+  height: 20px;
+  text-indent: -9999px;
+  text-decoration: none;
+  width: 100px;
+}
+
+.breadcrumb {
+  border: 1px solid darken(@wellBackground, 2%);
+  box-shadow: 0 1px 0 0 #FFFFFF inset, 0 1px 0 rgba(255,255,255,0.4);
+}
+.well {
+  border: 1px solid darken(@wellBackground, 2%);
+  box-shadow: 0 1px 0 0 #FFFFFF inset, 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.well.rad0 {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.well.well-nav-list {
+  padding: 0;
+}
+.nav-list li.active a {
+  box-shadow: 0 1px 0 0 #FFFFFF inset, 0 1px 0 rgba(255,255,255,0.4);
+  #gradient > .vertical(lighten(@gray,20%), lighten(@gray, 30%));
+}
+.well.flattop {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
+  -moz-border-top-right-radius: 0;
+  -moz-border-top-left-radius: 0;
+
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-top-left-radius: 0;
+}
+.well.flatbtm {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+  -moz-border-bottom-right-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+}
+
+.inputappend
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  height: auto;
+}
+
+
+
+// 3.) CSS Spacers
+.mar0 {
+    margin: 0;
+}
+.mar20btm {
+  margin-bottom: 20px;
+}
+.pad3top {
+  padding-top: 3px;
+}
+.pad5rt {
+  padding-right: 5px;
+}
+.w80 {
+    width: 80px;
+}
+
+.w110 {
+    width: 110px;
+}
+.inline-block {
+    display: inline-block;
+}
+
+
+
+// 4.) Phalanx-specific widgets
+
+.center {
+  text-align: center;
+}
+.status-boxes {
+  margin: 0px;
+}
+.status-boxes li {
+  border: 1px solid darken(@wellBackground, 30%);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.8) inset, 0 1px 0 rgba(255,255,255,0.4);
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0 0 5px 0;
+  .border-radius(@baseBorderRadius);
+  padding: 4px 10px;
+  #gradient > .vertical(darken(@wellLighter,8%), @wellLighter);
+}
+
+
+.stat-boxes {
+  margin: 0px;
+}
+.stat-boxes li {
+  border: 1px solid darken(@wellBackground, 7%);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.4) inset, 0 1px 0 rgba(255,255,255,0.4);
+  display: inline-block;
+  line-height: 18px;
+  margin: 0 10px 0 ;
+  .border-radius(@baseBorderRadius);
+  padding: 0 10px;
+  #gradient > .vertical(darken(@wellLighter,8%), @wellLighter);
+}
+
+.stat-boxes li .left {
+  float: left;
+  padding: 10px;
+}
+.stat-boxes li .right {
+  float: left;
+  border-left: 1px solid darken(@wellBackground, 7%);
+  padding: 10px;
+}
+.stat-boxes li strong {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+.stat-boxes li span {
+  font-size: 10px;
+  color: @grayLight;
+}
+.stat-boxes .number-badge {
+  box-shadow: 0 1px 0 0 #FFFFFF inset, 0 1px 0 rgba(255,255,255,0.4);
+  #gradient > .vertical(darken(@blue,8%), @blue);
+  font-weight: bold;
+  width: 80px;
+  text-align: center;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 20px;
+  .border-radius(4px);
+}
+.stat-boxes .status-good, .status-boxes .status-good {
+  #gradient > .vertical(darken(@green,8%), @green);
+}
+.stat-boxes .status-ok, .status-boxes .status-ok {
+  #gradient > .vertical(darken(@yellow,8%), @yellow);
+}
+.stat-boxes .status-bad, .status-boxes .status-bad {
+  #gradient > .vertical(darken(@red,8%), @red);
+}
+
+
+
+.widget {
+    background: #fff;
+    border: solid 1px #ddd;
+    margin: 0;
+    padding:0;
+    border: 1px solid darken(@wellBackground, 7%);
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+    .border-radius(@baseBorderRadius);
+}
+.widget.mar20top {
+    margin-top: 20px;
+}
+.widget.mar20btm {
+    margin-bottom: 20px;
+}
+
+.widget-header {
+    box-shadow: 0 1px 0 0 #FFFFFF inset, 0 1px 0 rgba(255,255,255,0.4);
+    border-radius: 4px 4px 0 0;
+    padding: 0 10px;
+    #gradient > .vertical(darken(@wellLighter,8%), @wellLighter);
+    border-bottom: 1px solid darken(@wellBackground, 7%);
+}
+.widget .widget-body {
+    padding :10px;
+}
+.widget .widget-header h3 {
+  margin:0;
+  font-size: 14px;
+  padding: 0;
+  line-height: 25px;
+  text-shadow: 0 1px @white;
+  color: @grayLight;
+
+}
+.well.wellinset {
+  #gradient > .vertical(@wellBackground, @wellLighter);
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.show-overflow .tab-content{
+  overflow: visible;
+}
+
+.messageGrid {
+  border: solid 1px #ccc;
+	outline: none;
+	height: 255px;
+}
+
+
+.messageGrid .ngViewport{
+	outline: none;
+}
+.ngGrid .pinned {
+    z-index: 1000;
+}
+
+.thumb {
+  float: left;
+  margin: -1em 1em 1.5em 0em;
+  padding-bottom: 1em;
+  height: 100px;
+  width: 100px;
+}
+
+
+
+
+// 5.) Media Resizing
+/* media query fixes */
+@media (min-width: 979px) {
+    body {
+        margin-top: 95px;
+    }
+}
+
+// 6.) External Libraries
+
+// Stuff for dangle
+
+/* axis line test */
+.axis path { 
+    fill: none; 
+    stroke:#000; 
+    stroke-width: 1.5px; 
+    shape-rendering: crispEdges;
+}
+
+/* axis tick marks */
+.axis line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1.1px;
+    shape-rendering: crispEdges;
+}
+
+/* controls the axis text */
+.axis text {
+    fill: #333;
+    stroke: none;
+    shape-rendering: crispEdges;
+    font-size: 12px;
+}
+
+/* controls the area */
+.area.fill { 
+    fill: #9ecae1;
+    fill-opacity: 0.2;
+}
+
+/* controls the top line in area */
+.area.line {
+    fill: none;
+    stroke: #058dc7;
+    stroke-width: 6.0px;
+}
+
+.area.line.points {
+    fill: #058dc7;
+    stroke: #fff;
+    stroke-width: 3.0px;
+}
+
+/* histogram styles */
+.histo.rect { fill: #058dc7; }
+
+.bar.rect {
+    fill: #058dc7;
+    stroke: none;
+}
+
+.bar.text {
+    fill: #000;
+    stroke: none;
+    font-size: 12px;
+}
